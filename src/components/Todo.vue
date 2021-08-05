@@ -4,9 +4,8 @@
       <li
         v-for="todo in todos"
         v-bind:key="todo.id"
-        :class="{ check: !feito, 'check-feito': feito }"
       >
-        <span>{{ todo.text }}</span>
+        <span :class="{ 'check': !feito, 'check-feito': feito }">{{ todo.text }}</span>
         <input type="checkbox" @click="terminar" />
       </li>
     </ul>
@@ -42,7 +41,7 @@ export default {
       this.todos = [];
     },
     terminar() {
-      this.feito = !this.feito;
+      //this.feito = !this.feito;
     },
   },
 };
